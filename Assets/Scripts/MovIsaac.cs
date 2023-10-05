@@ -9,6 +9,8 @@ public class MovIsaac : MonoBehaviour
     public bool saltar = false;
     public float fuerzaSalto = 0.5f;
     public bool enSuelo = false;
+    public bool gameOver;
+    public bool victoria;
     
     void Start()
     {
@@ -28,6 +30,10 @@ public class MovIsaac : MonoBehaviour
             saltar = true;
         }
     }
+    public void Pausa()
+    {
+        Time.timeScale = 1.0f;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -35,12 +41,22 @@ public class MovIsaac : MonoBehaviour
 
 
 
-        if (collision.gameObject.tag == "suelo")
+        if (collision.gameObject.name == "suelo")
         {
             enSuelo = true;
         }
-        else if (collision.gameObject.tag == "keeper")
+        if (collision.gameObject.CompareTag("Enemigo"))
         {
+            Debug.Log("Game Over");
+            gameOver = true;
+            Time.timeScale = 0f;
+
+        }
+        if (collision.gameObject.name == "trofeo")
+        {
+            Debug.Log("Victoria");
+            victoria = true;
+            Time.timeScale = 0f;
 
         }
     }
@@ -52,5 +68,19 @@ public class MovIsaac : MonoBehaviour
             saltar = false;
             enSuelo = false;
         }
+    }
+ 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        Destroy(collision.gameObject);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+  
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
     }
 }
