@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206305387}
   - component: {fileID: 206305386}
+  - component: {fileID: 206305388}
   m_Layer: 0
   m_Name: moneda
   m_TagString: Untagged
@@ -291,6 +292,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &206305388
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206305385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
 --- !u!1 &244708834
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +365,7 @@ MonoBehaviour:
   fuerzaSalto: 6.5
   enSuelo: 1
   gameOver: 1
+  victoria: 0
 --- !u!212 &244708836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -390,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 244708834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.25, y: -3.97, z: 0}
+  m_LocalPosition: {x: -10.3, y: -3.94, z: 0}
   m_LocalScale: {x: 5.207397, y: 5.2702107, z: 1.0609}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -411,7 +448,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -422,7 +459,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &244708839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,9 +609,10 @@ GameObject:
   - component: {fileID: 548941062}
   - component: {fileID: 548941065}
   - component: {fileID: 548941064}
+  - component: {fileID: 548941066}
   m_Layer: 0
   m_Name: trofeo
-  m_TagString: Untagged
+  m_TagString: Trofeo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,6 +725,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440d9e4ed7267874ab0a2c6239d94ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &548941066
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548941061}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.045239337, y: -0.013919698}
+  serializedVersion: 2
+  m_Radius: 0.6786803
 --- !u!1 &654193766
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,8 +981,8 @@ Transform:
   m_GameObject: {fileID: 659644296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.41, y: 1.2, z: 0}
-  m_LocalScale: {x: 4.3695874, y: 3.9424596, z: 2.9649}
+  m_LocalPosition: {x: -5.27, y: 1.94, z: 0}
+  m_LocalScale: {x: 4.5895205, y: 3.5967119, z: 2.9649}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1184,6 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 761852217}
   - component: {fileID: 761852216}
+  - component: {fileID: 761852218}
   m_Layer: 0
   m_Name: moneda3
   m_TagString: Untagged
@@ -1258,6 +1332,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &761852218
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761852215}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
 --- !u!1 &994457216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 994457218}
   - component: {fileID: 994457217}
+  - component: {fileID: 994457219}
   m_Layer: 0
   m_Name: moneda2
   m_TagString: Untagged
@@ -1342,6 +1452,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &994457219
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994457216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
 --- !u!1 &1333736495
 GameObject:
   m_ObjectHideFlags: 0

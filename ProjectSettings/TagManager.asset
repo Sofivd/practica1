@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Suelo
+  - Trofeo
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class MovIsaac : MonoBehaviour
@@ -11,10 +12,22 @@ public class MovIsaac : MonoBehaviour
     public bool enSuelo = false;
     public bool gameOver;
     public bool victoria;
-    
+    public float tiempo = 0;
+    public bool JuegoOn = true;
+    public string Contador;
+    public bool tenerLlave = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Contador = "Tiempo: 00:00";
+        
+
+      
+
+       
+
+        
     }
 
     // Update is called once per frame
@@ -29,6 +42,8 @@ public class MovIsaac : MonoBehaviour
         {
             saltar = true;
         }
+        
+        
     }
     public void Pausa()
     {
@@ -59,6 +74,11 @@ public class MovIsaac : MonoBehaviour
             Time.timeScale = 0f;
 
         }
+        if (collision.gameObject.CompareTag("Pill"))
+        {
+            Debug.Log("Te haces más pequeño");
+            transform.localScale = new Vector2(3.2f, 3.2f);
+        }
     }
     void FixedUpdate()
     {
@@ -74,7 +94,15 @@ public class MovIsaac : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name);
         Destroy(collision.gameObject);
+
+        if(gameObject.CompareTag("Key"))
+        {
+
+            tenerLlave = true;
+
+        }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
   
